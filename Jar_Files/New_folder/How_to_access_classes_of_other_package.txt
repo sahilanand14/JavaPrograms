@@ -1,0 +1,21 @@
+CASE 1: When u have .class file in other folder, u nedd to set its classpath
+
+step 1: from current directory type:
+        javac -cp D:\\java_programs\\Jar_Files MyClass.java
+                  //this is the class path where   this is the
+                  //any Class used inside MyClass  name of our file
+                  //will be searched               which uses associated classes
+step 2: from current directory type
+		java -cp .;D:\\java_programs\\Jar_Files MyClass
+
+
+CASE 2: When u have .class file in a jar file in other folder.
+
+step 1: from current directory type:
+		javac -cp D:\\java_programs\\Jar_Files\\MyJar.jar MyClass.java
+		
+		//the only difference in case of jar file is that we need to include
+		 //the jar file name also in the classpath.
+
+step 2: from current directory type:
+		java -cp .;D:\\java_programs\\Jar_Files\\MyJar.jar MyClass

@@ -1,0 +1,18 @@
+A Final variable must be cumpulsarily initialised either at declaration time or in the constructor or static block(in case of constants).
+hence FINAL variable "DOSEN'T HAVE DEFAULT VALUE".
+
+example:
+class Test
+{
+final int i;
+main()
+{
+}
+
+}
+gives error as final variable is not defined in the constructor as well as at class level.
+
+
+if we use blank final variable and have many constructors in our class, then every constructor should initialise blank final variable (done via constructor chaining
+)
+

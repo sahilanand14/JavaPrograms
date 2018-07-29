@@ -1,0 +1,10 @@
+step 1: write the following code in batch file
+    java -cp D:\\java_programs\\Jar_Files MyClass
+
+             //here we specify path      //here we specify the name of class which we want to execute
+             //where MyClass will be
+             //searched
+
+step 2: save the file as abc.bat
+now u can take this batch file to any directory and your program will still run.
+to run program simply double click the abc.bat file.

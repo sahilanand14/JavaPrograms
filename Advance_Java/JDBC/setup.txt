@@ -1,0 +1,18 @@
+For Mysql:
+
+username:"root"
+password:"sahil123"
+to start mysql service:sudo /etc/init.d/mysql start
+to stop mysql service:sudo /etc/init.d/mysql stop
+to check status of mysql service:systemctl status mysql.service
+to enter into mysql mode:mysql -u root -p
+
+
+set classpath of mysql-connector-file:
+
+to download jar file: sudo apt-get install libmysql-java  (one time)
+set classpath of jar file temporarily: export CLASSPATH=$CLASSPATH:/usr/share/java/mysql-connector-java.jar  (valid for each session)
+
+
+
+

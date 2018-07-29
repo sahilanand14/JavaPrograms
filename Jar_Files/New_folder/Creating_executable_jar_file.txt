@@ -1,0 +1,16 @@
+step 1: The class which needs to be executed must have main method
+step 2: compile the .java file to get .class file.
+step three: create a manifest file and write in it the below code:
+			Main-Class: JarDemo(mandatory press enter after this)
+
+			save manifest file as manifest.mf.
+     
+   				
+		
+  //below statement creates .jar file.
+    
+   step 4:jar -cvfm DemoJar.jar manifest.mf JarDemo.class 
+   to run .jar file 
+   step 5:java -jar DemoJar.jar
+   or 
+   "double click the jar file."

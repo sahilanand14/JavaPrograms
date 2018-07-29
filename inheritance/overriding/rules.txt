@@ -1,0 +1,57 @@
+The rules for overriding a method are as follows:
+
+
+■ The argument list must exactly match that of the overridden method. If they
+don't match, you can end up with an overloaded method you didn't intend.
+■ The return type must be the same as, or a subtype of, the return type declared
+in the original overridden method in the superclass. ( covariant returns.)
+■ The access level can't be more restrictive than the overridden method's.
+
+This rule is applied because a parent class knows nothing about its child class. Therefore if we are trying to 
+invoke a public method of parent class on a parent class reference variable which has been made private by child class
+we would get error.
+example:
+
+class Animal{public void eat(){}}
+class Horse extends Animal{private void eat(){}}
+ Animal a=new Horse();
+	a.eat();
+	
+
+Now, developer knows that Animal class has a public eat method so it can freely call it on reference variable of Animal class.
+But it gives error if method is made private by child class.
+if there are 100 child classesand each class is allowed to change access specifier of method to private than our code might break.
+That's why the rule was imposed. 
+	
+■ The access level CAN be less restrictive than that of the overridden method.
+■ Instance methods can be overridden only if they are inherited by the subclass.
+A subclass within the same package as the instance's superclass can override
+any superclass method that is not marked private or final . A subclass in a
+different package can override only those non- final methods marked pub-
+lic or protected (since protected methods are inherited by the subclass).
+■ The overriding method CAN throw any unchecked (runtime) exception,
+regardless of whether the overridden method declares the exception. 
+■ The overriding method must NOT throw checked exceptions that are new
+or broader than those declared by the overridden method. For example, a
+method that declares a FileNotFoundException cannot be overridden by a
+method that declares a SQLException, Exception, or any other non-runtime
+exception unless it's a subclass of FileNotFoundException.
+
+This rule is applicable because a developer dosent know about how the child class has overriden methods.
+If the child class method is allowed to throw new or Broader exception than those defined by parent then we dont know what 
+type of exceptions can occur.
+Hence our code might break.
+
+example:
+class Animal{public void eat() throws SQLException{}}
+now developer knows that whenever eat method is invoked, at max SQLException can occur and writes the code to handle that exception.
+
+
+
+■ The overriding method can throw narrower or fewer exceptions. Just because
+an overridden method "takes risks" doesn't mean that the overriding subclass'
+exception takes the same risks. Bottom line: an overriding method doesn'tOverridden Methods 
+have to declare any exceptions that it will never throw, regardless of what the
+overridden method declares.
+■ You cannot override a method marked final .
+■ You cannot override a method marked static . 

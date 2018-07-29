@@ -1,0 +1,12 @@
+A reference variable can be of only one type, and once declared, that type
+can never be changed (although the object it references can change).
+■ A reference is a variable, so it can be reassigned to other objects, (unless the
+reference is declared final ).
+■ A reference variable's type determines the methods that can be invoked on
+the object the variable is referencing.
+■ A reference variable can refer to any object of the same type as the declared
+reference, or—this is the big one—it can refer to any subtype of the
+declared type!
+■ A reference variable can be declared as a class type or an interface type. If
+the variable is declared as an interface type, it can reference any object of any
+class that implements the interface.

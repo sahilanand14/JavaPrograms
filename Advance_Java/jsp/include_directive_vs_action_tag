@@ -1,0 +1,18 @@
+<@include> - The directive tag instructs the JSP compiler to merge contents of the included file into the JSP before creating the generated servlet code. It is the equivalent to cutting and pasting the text from your include page right into your JSP.
+
+Only one servlet is executed at run time.
+Scriptlet variables declared in the parent page can be accessed in the included page (remember, they are the same page).
+The included page does not need to able to be compiled as a standalone JSP. It can be a code fragment or plain text. The included page will never be compiled as a standalone. The included page can also have any extension, though .jspf has become a conventionally used extension.
+One drawback on older containers(not now) is that changes to the include pages may not take effect until the parent page is updated. Recent versions of Tomcat will check the include pages for updates and force a recompile of the parent if they're updated.
+A further drawback is that since the code is inlined directly into the service method of the generated servlet, the method can grow very large. If it exceeds 64 KB, your JSP compilation will likely fail.
+
+
+
+<jsp:include> - The JSP Action tag on the other hand instructs the container to pause the execution of this page, go run the included page, and merge the output from that page into the output from this page.
+
+Each included page is executed as a separate servlet at run time.
+Pages can conditionally be included at run time. This is often useful for templating frameworks that build pages out of includes. The parent page can determine which page, if any, to include according to some run-time condition.
+The values of scriptlet variables need to be explicitly passed to the include page.
+The included page must be able to be run on its own.
+You are less likely to run into compilation errors due to the maximum method size being exceeded in the generated servlet class.
+Depending on your needs, you may either use <@include> or  <jsp:include>

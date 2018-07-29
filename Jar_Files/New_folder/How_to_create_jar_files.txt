@@ -1,0 +1,7 @@
+step 1: compile the .java file to get .class file
+step 2: jar -cvf MyJar.jar DemoJar.class
+//this will add DemoJar.class in MyJar.jar
+
+to add many .class files in a single jar file
+
+jar -cvf MyJar.jar file1_name.class file2_name.class file4_name.class etc.

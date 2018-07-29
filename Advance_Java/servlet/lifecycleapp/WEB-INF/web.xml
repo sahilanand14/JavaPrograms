@@ -1,0 +1,10 @@
+<web-app>
+<servlet>
+<servlet-name>One</servlet-name>
+<servlet-class>LifeSrv</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>One</servlet-name>
+<url-pattern>/life</url-pattern>
+</servlet-mapping>
+</web-app>
